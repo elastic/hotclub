@@ -7,7 +7,7 @@ export const IndicesLayout = () => {
   const pathName = useLocation().pathname;
 
   const handleClick = (path: string) => {
-    navigate(`/content/indices${path}`);
+    navigate(`/indices/detail${path}`);
   };
 
   const checkPathname = (path: string) => {
@@ -44,10 +44,10 @@ export const IndicesLayout = () => {
             onClick: () => handleClick("/pipelines"),
           },
           {
-            id: "configuration",
-            label: "Configuration",
-            isSelected: checkPathname("configuration"),
-            onClick: () => handleClick("/configuration"),
+            id: "settings",
+            label: "Settings",
+            isSelected: checkPathname("settings"),
+            onClick: () => handleClick("/settings"),
           },
         ]}
       />
