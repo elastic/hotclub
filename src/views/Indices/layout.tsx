@@ -13,7 +13,6 @@ export const IndicesLayout = () => {
   const checkPathname = (path: string) => {
     return pathName?.includes(path);
   };
-
   return (
     <>
       <EuiPageTemplate.Header
