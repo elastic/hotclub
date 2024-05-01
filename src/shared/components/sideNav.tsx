@@ -54,6 +54,22 @@ export const SideNav = () => {
       ],
     },
     {
+      name: "Relevance",
+      id: "relevance",
+      items: [
+        {
+          name: "Inference Endpoints",
+          id: "search-applications",
+          onClick: () => navigate("/relevance/inference-endpoints"),
+        },
+        {
+          name: "Query Rules",
+          id: "query-rules",
+          onClick: () => navigate("/relevance/query-rules"),
+        },
+      ],
+    },
+    {
       name: "Applications",
       id: "applications",
       items: [
