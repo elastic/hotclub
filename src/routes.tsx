@@ -3,6 +3,7 @@ import App from "./App";
 import ConnectorsView from "./views/Connectors/page";
 import { IndexSample } from "./views/Indices/indexSample";
 import { IndicesLayout } from "./views/Indices/layout";
+import { QueryRulesView } from "./views/QueryRules/query-rules";
 
 const Test = ({ title }: any) => {
 
@@ -81,7 +82,7 @@ export const Routes = createBrowserRouter([
       },
       {
         path: "relevance",
-        element: <><Test title="Relevance Overview" /><Outlet /></>,
+        // element: <><Test title="Relevance Overview" /><Outlet /></>,
         children: [
           {
             path: "inference-endpoints",
@@ -89,7 +90,7 @@ export const Routes = createBrowserRouter([
           },
           {
             path: "query-rules",
-            element: <Test title='Query Rules' />,
+            element: <QueryRulesView />,
           },
         ]
       },
