@@ -53,6 +53,10 @@ export const Routes = createBrowserRouter([
             path: "settings",
             element: <Test title='Settings' />,
           },
+          {
+            path: "settings",
+            element: <Test title='Settings' />,
+          },
         ],
       },
       {
