@@ -42,7 +42,7 @@ export const QueryRulesView = () => {
         <EuiFlexItem grow={3}>
           This is where the main pane
         </EuiFlexItem>
-
+        This is where the main pane
       </EuiFlexGroup>
     </>
   )
