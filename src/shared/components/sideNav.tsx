@@ -19,9 +19,33 @@ export const SideNav = () => {
 
   const sideNavItems = [
     {
-      name: "Home",
+      name: <></>,
       id: htmlIdGenerator("basicExample")(),
-      onClick: () => navigate("/"),
+      items: [
+        {
+          name: "Home",
+          id: htmlIdGenerator("basicExample")(),
+          onClick: () => navigate("/"),
+        },
+        {
+          name: "Dev console",
+          id: htmlIdGenerator("basicExample")(),
+        },
+      ]
+    },
+    {
+      name: "Kibana",
+      id: "kibana",
+      items: [
+        {
+          name: "Discover",
+          id: htmlIdGenerator("basicExample")(),
+        },
+        {
+          name: "Dashboards",
+          id: htmlIdGenerator("basicExample")(),
+        },
+      ],
     },
     {
       name: "Content",
@@ -36,57 +60,32 @@ export const SideNav = () => {
         {
           name: "Connectors",
           id: htmlIdGenerator("basicExample")(),
-          isSelected: checkParams("/content/connectors"),
-          onClick: () => navigate("/content/connectors"),
+          isSelected: checkParams("/connectors"),
+          onClick: () => navigate("/connectors"),
         },
         {
           name: "Web Crawlers",
           id: htmlIdGenerator("basicExample")(),
-          isSelected: checkParams("/content/crawlers"),
-          onClick: () => navigate("/content/crawlers"),
-        },
-        {
-          name: "Settings",
-          id: htmlIdGenerator("basicExample")(),
-          isSelected: checkParams("/content/settings"),
-          onClick: () => navigate("/content/settings"),
+          isSelected: checkParams("/crawlers"),
+          onClick: () => navigate("/crawlers"),
         },
       ],
     },
     {
-      name: "Applications",
-      id: "applications",
+      name: "Build",
+      id: "build",
       items: [
         {
+          name: "Playground",
+          id: htmlIdGenerator("basicExample")(),
+        },
+        {
           name: "Search Applications",
-          id: "search-applications",
-          onClick: () => navigate("/"),
+          id: htmlIdGenerator("basicExample")(),
         },
         {
           name: "Behavioral Analytics",
-          id: "behavioral-analytics",
-          onClick: () => navigate("/"),
-        },
-      ],
-    },
-    {
-      name: "Getting Started",
-      id: "getting-started",
-      items: [
-        {
-          name: "Elasticsearch",
-          id: "gs-elasticsearch",
-          onClick: () => navigate("/"),
-        },
-        {
-          name: "Vector Search",
-          id: "gs-vector-search",
-          onClick: () => navigate("/"),
-        },
-        {
-          name: "AI Search",
-          id: "gs-ai-search",
-          onClick: () => navigate("/"),
+          id: htmlIdGenerator("basicExample")(),
         },
       ],
     },
@@ -107,6 +106,7 @@ export const SideNav = () => {
       ],
     },
   ];
+
   return (
     <EuiSideNav
       items={sideNavItems}

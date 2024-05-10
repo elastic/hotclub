@@ -53,10 +53,6 @@ export const Routes = createBrowserRouter([
             path: "settings",
             element: <Test title='Settings' />,
           },
-          {
-            path: "settings",
-            element: <Test title='Settings' />,
-          },
         ],
       },
       {
@@ -70,7 +66,7 @@ export const Routes = createBrowserRouter([
         ]
       },
       {
-        path: "web-crawlers",
+        path: "crawlers",
         element: <div><h1>Web Crawlers</h1><Outlet /></div>,
         children: [
           {
