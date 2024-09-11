@@ -1,14 +1,46 @@
 import React from 'react';
 import {
+  EuiBasicTable,
   EuiButton,
   EuiButtonEmpty,
-  EuiFlexGroup,
-  EuiFlexItem,
   EuiPageHeader,
-  EuiSpacer
+  EuiBasicTableColumn,
+  EuiSpacer,
+  EuiSearchBar
 } from "@elastic/eui";
 
+import { faker } from '@faker-js/faker';
+import { useNavigate } from "react-router-dom";
+
+type Ruleset = {
+  id: string;
+  rule_total_count: number;
+};
+
+const rulesets: Ruleset[] = [];
+
+for (let i = 0; i < 4; i++) {
+  rulesets.push({
+    id: faker.string.uuid(),
+    rule_total_count: faker.number.int(50),
+  });
+}
+
+
 export const QueryRulesView = () => {
+  const navigate = useNavigate()
+
+  const columns: Array<EuiBasicTableColumn<Ruleset>> = [
+    {
+      field: 'id',
+      name: 'Ruleset',
+      'data-test-subj': 'rulesetIDCell',
+    },
+    {
+      field: 'rule_total_count',
+      name: "Rules"
+    }
+  ]
 
   return (
     <>
@@ -20,6 +52,7 @@ export const QueryRulesView = () => {
             iconSide='left'
             iconType='plusInCircle'
             fill
+            onClick={() => (navigate(`/relevance/query-rule-detail`))}
           >
             Create
           </EuiButton>,
@@ -32,18 +65,15 @@ export const QueryRulesView = () => {
         ]}
         bottomBorder
       />
+
+      <EuiSpacer />
+      <EuiSearchBar />
       <EuiSpacer />
 
-      <EuiFlexGroup gutterSize="none">
-        <EuiFlexItem>
-          This is the left list
-        </EuiFlexItem>
-
-        <EuiFlexItem grow={3}>
-          This is where the main pane
-        </EuiFlexItem>
-        This is where the main pane
-      </EuiFlexGroup>
+      <EuiBasicTable
+        columns={columns}
+        items={[]}
+      />
     </>
   )
 }

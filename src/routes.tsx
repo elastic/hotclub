@@ -4,6 +4,7 @@ import ConnectorsView from "./views/Connectors/page";
 import { IndexSample } from "./views/Indices/indexSample";
 import { IndicesLayout } from "./views/Indices/layout";
 import { QueryRulesView } from "./views/QueryRules/query-rules";
+import { QueryRuleDetail } from "./views/QueryRules/query-rule-detail";
 
 const Test = ({ title }: any) => {
 
@@ -91,6 +92,10 @@ export const Routes = createBrowserRouter([
           {
             path: "query-rules",
             element: <QueryRulesView />,
+          },
+          {
+            path: "query-rule-detail",
+            element: <QueryRuleDetail />,
           },
         ]
       },
