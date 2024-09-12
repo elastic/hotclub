@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   EuiBasicTable,
   EuiButton,
@@ -11,6 +11,7 @@ import {
 
 import { faker } from '@faker-js/faker';
 import { useNavigate } from "react-router-dom";
+import { CreateModal } from './components/CreateModal';
 
 type Ruleset = {
   id: string;
@@ -48,14 +49,7 @@ export const QueryRulesView = () => {
         pageTitle='Query Rules'
         description='Create and manage your query rules'
         rightSideItems={[
-          <EuiButton
-            iconSide='left'
-            iconType='plusInCircle'
-            fill
-            onClick={() => (navigate(`/relevance/query-rule-detail`))}
-          >
-            Create
-          </EuiButton>,
+          <CreateModal />,
           <EuiButtonEmpty
             iconSide='left'
             iconType='help'
