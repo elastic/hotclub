@@ -62,11 +62,6 @@ export const SideNav = () => {
           id: "search-applications",
           onClick: () => navigate("/relevance/inference-endpoints"),
         },
-        {
-          name: "Query Rules",
-          id: "query-rules",
-          onClick: () => navigate("/relevance/query-rules"),
-        },
       ],
     },
     {
