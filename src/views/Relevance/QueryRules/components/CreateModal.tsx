@@ -12,13 +12,13 @@ import {
   useGeneratedHtmlId,
   EuiFieldText
 } from '@elastic/eui';
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 export const CreateModal = () => {
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   const navigate = useNavigate();
-  const closeModal = () => (navigate('/relevance/query-rule-detail'));
+  const closeModal = () => navigate('/relevance/query-rules/detail');
   const showModal = () => setIsModalVisible(true);
 
   const modalTitleId = useGeneratedHtmlId();
@@ -46,16 +46,17 @@ export const CreateModal = () => {
           <EuiModalBody>
             <EuiForm>
               <EuiFormRow label="Name">
-                <EuiFieldText value="My new query rule" />
+                <EuiFieldText
+                  placeholder='My new query rule'
+                  name="id"
+                />
               </EuiFormRow>
+              <EuiButton fill onClick={closeModal}>
+                Save
+              </EuiButton>
             </EuiForm>
           </EuiModalBody>
 
-          <EuiModalFooter>
-            <EuiButton onClick={closeModal} fill>
-              Save
-            </EuiButton>
-          </EuiModalFooter>
         </EuiModal>
       }
     </>
